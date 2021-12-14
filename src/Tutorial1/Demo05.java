@@ -83,7 +83,7 @@ class BullDog extends Dog
 
 class Chiwawa extends Dog
 {
-    public String bark3()
+    public String bark2()
     {
         return "Yip！Yip!";
     }
