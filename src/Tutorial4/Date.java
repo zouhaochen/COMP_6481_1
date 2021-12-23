@@ -3,8 +3,9 @@ package Tutorial4;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 
-public class Demo03
+public class Date implements Serializable
 {
     private String month;
     private int day;
@@ -90,14 +91,49 @@ public class Demo03
         return ((monthInt >= 1) && (monthInt <=12) && (dayInt >= 1) && (dayInt <= 31) && (yearInt >= 1000) && (yearInt <= 9999));
     }
 
-    public boolean equals(Demo03 otherDate)
+    public boolean equals(Date otherDate)
     {
         return ((month.equals(otherDate.month))) && (day == otherDate.day) && (year == otherDate.year);
     }
 
+    public boolean precedes(Date otherDate)
+    {
+        return ((year < otherDate.year) || (year == otherDate.year && getMonth() < otherDate.getMonth()) || (year == otherDate.year && month.equals(otherDate.month)&& day < otherDate.day));
+    }
+
     private String monthString(int monthNumber)
     {
-        return "month";
+        switch (monthNumber)
+        {
+            case 1:
+                return "Jan";
+            case 2:
+                return "Feb";
+            case 3:
+                return "Mar";
+            case 4:
+                return "Apr";
+            case 5:
+                return "May";
+            case 6:
+                return "Jun";
+            case 7:
+                return "Jul";
+            case 8:
+                return "Aug";
+            case 9:
+                return "Sep";
+            case 10:
+                return "Ocy";
+            case 11:
+                return "Nov";
+            case 12:
+                return "Dec";
+            default:
+                System.out.println("Fatal Error");
+                System.exit(0);
+                return "Error";
+        }
     }
 
     public int getDay()
