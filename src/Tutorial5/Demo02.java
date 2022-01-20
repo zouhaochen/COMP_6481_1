@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /*
-Read file "foo.txt" line by line using BufferedReader object and count the number of lines in file.
+Week2.Inheritance.Read file "foo.txt" line by line using BufferedReader object and count the number of lines in file.
 Report exception thrown by BufferedReader
 */
 public class Demo02

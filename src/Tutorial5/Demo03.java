@@ -3,7 +3,7 @@ package Tutorial5;
 import java.io.*;
 
 /*
-Read binary file input.bin and write the content to output.bin by reading each byte using FileInputStream and FileOutputStream
+Week2.Inheritance.Read binary file input.bin and write the content to output.bin by reading each byte using FileInputStream and FileOutputStream
 */
 public class Demo03
 {

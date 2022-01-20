@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /*
-Read the whole file "foo.txt" line by line using Scanner object.
+Week2.Inheritance.Read the whole file "foo.txt" line by line using Scanner object.
 At the same time count the number of lines in file
 */
 public class Demo01
