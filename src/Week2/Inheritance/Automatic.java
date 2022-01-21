@@ -5,13 +5,15 @@ package Week2.Inheritance;// Week2.Inheritance.Automatic.java
 // This is the root class for all objects.
 
 
-public class Automatic { // extends Java's Object class
+public class Automatic
+{
+	// extends Java's Object class
 
 	public String apples = "Granny Smith";
 	public String oranges = "Florida";
 
-
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		
 		Automatic auto = new Automatic();
 		
@@ -27,24 +29,20 @@ public class Automatic { // extends Java's Object class
 	}
 }
 
-
-
-
-class Extra extends Automatic{
-	
+class Extra extends Automatic
+{
 	//	 the toString() method over-rides the toString method
 	//	 found in Java's Object class. Note that it does not use
 	//	 println statements. Instead, you must create a string
-	//	 that gets retunred at the end of the method.
+	//	 that gets retuned at the end of the method.
 	
-	public String toString(){
-		
+	public String toString()
+	{
 		String S = "";
 		S += "** Extra Listing: ** \n";
 		S += "apples = " + apples + "\n";
 		S += "oranges = " + oranges + "\n";
 		S += "...and that's it!";
-		
 		return S; 
 	}
 

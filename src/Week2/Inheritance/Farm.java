@@ -7,10 +7,11 @@ package Week2.Inheritance;// Week2.Inheritance.Farm.java
 
 // our farm test class. We create two animals and have them say Hello.
 
-public class Farm {
+public class Farm
+{
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args)
+	{
 		Pig myPig = new Pig(6, 120, "Porky");
 		myPig.sayHello();
 		System.out.println("It will cost " + myPig.cost() + " to feed me!");
@@ -24,21 +25,24 @@ public class Farm {
 
 // the base animal class. It has a few methods including an abstract
 // sayHello method
-abstract class Animal{
+
+abstract class Animal
+{
 	
 	int age;
 	int weight;
 	String name;
 	
-	public Animal(int age, int weight, String name){
+	public Animal(int age, int weight, String name)
+	{
 		this.age = age;
 		this.weight = weight;
 		this.name = name;
 	}
 	
-	double cost(){
+	double cost()
+	{
 		return (weight * age) / 2;
-		
 	}
 	
 	abstract void sayHello();
@@ -47,26 +51,32 @@ abstract class Animal{
 
 
 // the pig class provides its version of sayHello
-class Pig extends Animal{
+class Pig extends Animal
+{
 	
-	public Pig(int age, int weight, String name){
+	public Pig(int age, int weight, String name)
+	{
 		super(age, weight, name);
 	}
 	
-	public void sayHello(){
+	public void sayHello()
+	{
 		System.out.println("Oink, Oink!");
 	}
 }
 
 
 //the cow class provides its version of sayHello
-class Cow extends Animal{
+class Cow extends Animal
+{
 	
-	public Cow(int age, int weight, String name){
+	public Cow(int age, int weight, String name)
+	{
 		super(age, weight, name);
 	}
 	
-	public void sayHello(){
+	public void sayHello()
+	{
 		System.out.println("Moo, Moo!");
 	}
 }
