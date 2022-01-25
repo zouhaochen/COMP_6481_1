@@ -1,5 +1,7 @@
 package Week2.Lab;
 
+import java.util.Scanner;
+
 /*
 “Snakes and ladders” is a very popular game. It uses a 10x10 maze, with cells numbered from 1 to 100,
 and populated with snakes and ladders. A sample game is shown in the figure below.
@@ -41,6 +43,166 @@ public class Lab2b
 {
     public static void main(String[] args)
     {
+        Scanner keyboard = new Scanner(System.in);
+        int numberInput = 0;
 
+        try
+        {
+            numberInput = keyboard.nextInt();
+        }
+        catch (Exception e)
+        {
+            System.exit(0);
+        }
+        keyboard.nextLine();
+
+        if (numberInput<0)
+        {
+            System.exit(0);
+        }
+
+        String[] intPairInString = new String[numberInput];
+        int[][] startAndEndList = new int[numberInput][2];
+        String startInString;
+        String endInString;
+        int startInInt = 0;
+        int endInInt = 0;
+
+        for (int i = 0; i < intPairInString.length; i++)
+        {
+            intPairInString[i] = keyboard.nextLine();
+
+            if(intPairInString[i].length() < 3 || intPairInString[i].length() > 6)
+            {
+                System.exit(0);
+            }
+
+            String[] pair = intPairInString[i].split(" ");
+            startInString = pair[0];
+            endInString = pair[1];
+
+            if(startInString.length() < 1 || startInString.length() > 2)
+            {
+                System.exit(0);
+            }
+            if(endInString.length() < 1 || endInString.length() > 2)
+            {
+                System.exit(0);
+            }
+
+            try
+            {
+                startInInt = Integer.parseInt(startInString);
+                endInInt = Integer.parseInt(endInString);
+            }
+            catch (Exception e)
+            {
+                System.exit(0);
+            }
+
+            if(startInInt<1||startInInt>100)
+            {
+                System.exit(0);
+            }
+
+            if(endInInt<1||endInInt>100)
+            {
+                System.exit(0);
+            }
+
+            startAndEndList[i][0] = startInInt;
+            startAndEndList[i][1] = endInInt;
+        }
+
+        int sumA = 1;
+        int sumB = 1;
+
+        int move = 0;
+        try
+        {
+            move = keyboard.nextInt();
+        }
+        catch (Exception e)
+        {
+            System.exit(0);
+        }
+
+        keyboard.nextLine();
+        if(move < 1)
+        {
+            System.exit(0);
+        }
+
+        int[] moveList = new int[move];
+
+        for(int i = 0; i < moveList.length; i++)
+        {
+            try
+            {
+                moveList[i] = keyboard.nextInt();
+            }
+            catch (Exception e)
+            {
+                System.exit(0);
+            }
+
+            if(moveList[i] < 1 || moveList[i] > 6)
+            {
+                System.exit(0);
+            }
+        }
+
+        for(int i = 0; i < moveList.length; i++)
+        {
+            if (i % 2 == 0)
+            {
+                sumA = sumA + moveList[i];
+
+                int j = 0;
+                while(j<startAndEndList.length)
+                {
+                    if(startAndEndList[j][0] == sumA)
+                    {
+                        sumA = startAndEndList[j][1];
+                        j = 0;
+                    }
+                    else
+                    {
+                        j++;
+                    }
+                }
+            }
+            else
+            {
+                sumB = sumB + moveList[i];
+
+                int j = 0;
+                while(j<startAndEndList.length)
+                {
+                    if(startAndEndList[j][0] == sumB)
+                    {
+                        sumB = startAndEndList[j][1];
+                        j = 0;
+                    }
+                    else
+                    {
+                        j++;
+                    }
+                }
+            }
+        }
+
+        if(sumA > sumB)
+        {
+            System.out.println("A "+sumA);
+        }
+        else if(sumA < sumB)
+        {
+            System.out.println("B "+sumB);
+        }
+        else if (sumA == sumB)
+        {
+            System.exit(0);
+        }
     }
 }
