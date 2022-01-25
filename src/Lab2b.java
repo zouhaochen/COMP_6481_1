@@ -1,5 +1,3 @@
-package Week2.Lab;
-
 import java.util.Scanner;
 
 /*
