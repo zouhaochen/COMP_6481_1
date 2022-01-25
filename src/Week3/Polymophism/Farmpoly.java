@@ -1,4 +1,4 @@
-package Week3;// Farmpoly.java
+package Week3.Polymophism;// Farmpoly.java
 //
 // This examples shows polymorphism in action. Specifically, we can assign different
 // sub-types to a parent type variable and have each one produce unique behaviour

@@ -1,4 +1,4 @@
-package Week3;// Copies.java
+package Week3.Polymophism;// Copies.java
 //
 // an example that demomstrates how a polymorphic reference refers directly
 // to the child object. Copies are not made during assignment.
